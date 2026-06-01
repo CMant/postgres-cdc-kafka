@@ -1,0 +1,25 @@
+END USER LICENSE AGREEMENT (EULA)
+Copyright © 2025 [CMant-Yanyx]. All Rights Reserved.
+
+1. Scope of Rights
+    1.1 Source Code: All source code, design documents and core logic of this project are proprietary and confidential. No individual or organization is granted the right to access, copy, modify, compile, redistribute or reverse engineer the source code in any form.
+    1.2 Binary Files: The author hereby grants you a free, non-exclusive license to use the officially released binary files of this software. You may deploy and run the binaries for personal use, internal testing and commercial business scenarios.
+
+2. Prohibited Behaviors
+    2.1 You shall not decompile, disassemble, reverse analyze or try to extract source code, algorithms and core logic from the provided binaries.
+    2.2 You shall not rent, sell, sublicense, repackage or distribute the binaries for commercial profit.
+    2.3 You shall not remove or alter any copyright, trademark and legal statements in the software.
+
+3. Disclaimer of Warranty
+    This binary software is provided on an "AS IS" and "AS AVAILABLE" basis. The author makes no warranties, whether explicit or implicit, regarding the stability, security, performance or applicability of the software.
+    The author shall not be responsible for any system failure, data loss, business loss or other damages caused by the use of this software.
+
+4. Project Description
+    This customized PostgreSQL service implements CDC capabilities: it parses logical replication logs into JSON format and pushes data to Kafka. The decoding process runs on replica nodes to isolate workload from the primary database.
+    WAL replay logic is disabled inside the program, making the database a stateless service.
+    HA deployment is supported via repmgr, Patroni or Kubernetes. Two deployment modes are available:
+        - Single data copy on shared storage or remote NAS (active-standby mode);
+        - Three data copies for standard 3-node repmgr/patroni or others clusters.
+
+Important Notice:
+    Optimize Kafka configuration parameters properly to prevent memory overflow and Kafka cluster overload.

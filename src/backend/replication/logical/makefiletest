@@ -1,0 +1,29 @@
+#-------------------------------------------------------------------------
+# Makefile 专门编译 test.c 生成可执行文件 test
+# 兼容 PostgreSQL 源码 + Kafka 链接
+#-------------------------------------------------------------------------
+
+subdir = src/backend/replication/logical
+top_builddir = ../../../..
+include $(top_builddir)/src/Makefile.global
+
+# 头文件包含（自动继承 PG 所有头文件）
+override CPPFLAGS := -I. -I$(srcdir) $(CPPFLAGS)
+
+# Kafka 链接库
+LIBS += -lrdkafka
+
+# ===================== 核心：手动编译 + 链接 =====================
+all: test
+
+# 编译 test.c -> test.o
+test.o: test.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c test.c -o test.o
+
+# 链接 test.o -> 可执行文件 test
+test: test.o
+	$(CC) $(LDFLAGS) test.o -o test $(LIBS)
+
+# 清理文件
+clean:
+	rm -f test.o test .deps/

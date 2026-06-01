@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PG调试（自动跟随子进程）",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/pgslave/bin/postgres",
+            "args": [
+                "-D",
+                "/pgslave/data"
+            ],
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "stopAtEntry": true,
+            "terminateProcess": true,
+
+            "setupCommands": [
+                {
+                    "description": "启用漂亮打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "fork 后调试子进程",
+                    "text": "set follow-fork-mode child"
+                },
+                {
+                    "description": "fork 后分离父进程，让子进程接管调试",
+                    "text": "set detach-on-fork on"
+                }
+            ]
+        }
+    ]
+}
