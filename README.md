@@ -118,7 +118,6 @@ PUBLICATION sbtest
 ```
 
 # 最后
->  不想开源。 但二进制欢迎大家使用，免费的！
 >  GDB很辛苦，程序崩溃过很多次，很多问题AI是解决不了的。 关于软件有其他问题或者需要安装部署维护服务，请邮件沟通 `a645895855@163.com`。
 
 <img width="496" height="354" alt="图片" src="https://github.com/user-attachments/assets/060158ec-b6dd-4784-bb4d-e322f971e804" />
