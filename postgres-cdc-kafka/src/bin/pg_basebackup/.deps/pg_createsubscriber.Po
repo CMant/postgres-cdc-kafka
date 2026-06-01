@@ -1,0 +1,49 @@
+pg_createsubscriber.o: pg_createsubscriber.c \
+ ../../../src/include/postgres_fe.h ../../../src/include/c.h \
+ ../../../src/include/pg_config.h ../../../src/include/pg_config_manual.h \
+ ../../../src/include/pg_config_os.h ../../../src/include/postgres_ext.h \
+ ../../../src/include/port.h ../../../src/include/common/fe_memutils.h \
+ ../../../src/include/common/connect.h \
+ ../../../src/include/common/controldata_utils.h \
+ ../../../src/include/catalog/pg_control.h \
+ ../../../src/include/access/transam.h \
+ ../../../src/include/access/xlogdefs.h ../../../src/include/pgtime.h \
+ ../../../src/include/port/pg_crc32c.h \
+ ../../../src/include/port/pg_bswap.h \
+ ../../../src/include/common/logging.h \
+ ../../../src/include/common/pg_prng.h \
+ ../../../src/include/common/restricted_token.h \
+ ../../../src/include/fe_utils/recovery_gen.h \
+ ../../../src/interfaces/libpq/libpq-fe.h \
+ ../../../src/include/postgres_ext.h \
+ ../../../src/interfaces/libpq/pqexpbuffer.h \
+ ../../../src/include/fe_utils/simple_list.h \
+ ../../../src/include/fe_utils/string_utils.h \
+ ../../../src/include/getopt_long.h ../../../src/include/pg_getopt.h
+../../../src/include/postgres_fe.h:
+../../../src/include/c.h:
+../../../src/include/pg_config.h:
+../../../src/include/pg_config_manual.h:
+../../../src/include/pg_config_os.h:
+../../../src/include/postgres_ext.h:
+../../../src/include/port.h:
+../../../src/include/common/fe_memutils.h:
+../../../src/include/common/connect.h:
+../../../src/include/common/controldata_utils.h:
+../../../src/include/catalog/pg_control.h:
+../../../src/include/access/transam.h:
+../../../src/include/access/xlogdefs.h:
+../../../src/include/pgtime.h:
+../../../src/include/port/pg_crc32c.h:
+../../../src/include/port/pg_bswap.h:
+../../../src/include/common/logging.h:
+../../../src/include/common/pg_prng.h:
+../../../src/include/common/restricted_token.h:
+../../../src/include/fe_utils/recovery_gen.h:
+../../../src/interfaces/libpq/libpq-fe.h:
+../../../src/include/postgres_ext.h:
+../../../src/interfaces/libpq/pqexpbuffer.h:
+../../../src/include/fe_utils/simple_list.h:
+../../../src/include/fe_utils/string_utils.h:
+../../../src/include/getopt_long.h:
+../../../src/include/pg_getopt.h:

@@ -1,0 +1,24 @@
+cryptohash.o: cryptohash.c ../../src/include/postgres_fe.h \
+ ../../src/include/c.h ../../src/include/pg_config.h \
+ ../../src/include/pg_config_manual.h ../../src/include/pg_config_os.h \
+ ../../src/include/postgres_ext.h ../../src/include/port.h \
+ ../../src/include/common/fe_memutils.h \
+ ../../src/include/common/cryptohash.h md5_int.h \
+ ../../src/include/common/md5.h sha1_int.h \
+ ../../src/include/common/sha1.h sha2_int.h \
+ ../../src/include/common/sha2.h
+../../src/include/postgres_fe.h:
+../../src/include/c.h:
+../../src/include/pg_config.h:
+../../src/include/pg_config_manual.h:
+../../src/include/pg_config_os.h:
+../../src/include/postgres_ext.h:
+../../src/include/port.h:
+../../src/include/common/fe_memutils.h:
+../../src/include/common/cryptohash.h:
+md5_int.h:
+../../src/include/common/md5.h:
+sha1_int.h:
+../../src/include/common/sha1.h:
+sha2_int.h:
+../../src/include/common/sha2.h:

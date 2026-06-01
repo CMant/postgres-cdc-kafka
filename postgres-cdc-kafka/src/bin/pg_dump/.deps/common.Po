@@ -1,0 +1,54 @@
+common.o: common.c ../../../src/include/postgres_fe.h \
+ ../../../src/include/c.h ../../../src/include/pg_config.h \
+ ../../../src/include/pg_config_manual.h \
+ ../../../src/include/pg_config_os.h ../../../src/include/postgres_ext.h \
+ ../../../src/include/port.h ../../../src/include/common/fe_memutils.h \
+ ../../../src/include/catalog/pg_am_d.h \
+ ../../../src/include/catalog/pg_class_d.h \
+ ../../../src/include/catalog/pg_collation_d.h \
+ ../../../src/include/catalog/pg_extension_d.h \
+ ../../../src/include/catalog/pg_namespace_d.h \
+ ../../../src/include/catalog/pg_operator_d.h \
+ ../../../src/include/catalog/pg_proc_d.h \
+ ../../../src/include/catalog/pg_publication_d.h \
+ ../../../src/include/catalog/pg_subscription_d.h \
+ ../../../src/include/catalog/pg_type_d.h \
+ ../../../src/include/common/hashfn.h pg_backup_utils.h \
+ ../../../src/include/common/logging.h pg_dump.h pg_backup.h \
+ ../../../src/include/common/compression.h \
+ ../../../src/include/common/file_utils.h \
+ ../../../src/include/fe_utils/simple_list.h \
+ ../../../src/interfaces/libpq/libpq-fe.h \
+ ../../../src/include/postgres_ext.h \
+ ../../../src/include/lib/simplehash.h \
+ ../../../src/include/port/pg_bitutils.h
+../../../src/include/postgres_fe.h:
+../../../src/include/c.h:
+../../../src/include/pg_config.h:
+../../../src/include/pg_config_manual.h:
+../../../src/include/pg_config_os.h:
+../../../src/include/postgres_ext.h:
+../../../src/include/port.h:
+../../../src/include/common/fe_memutils.h:
+../../../src/include/catalog/pg_am_d.h:
+../../../src/include/catalog/pg_class_d.h:
+../../../src/include/catalog/pg_collation_d.h:
+../../../src/include/catalog/pg_extension_d.h:
+../../../src/include/catalog/pg_namespace_d.h:
+../../../src/include/catalog/pg_operator_d.h:
+../../../src/include/catalog/pg_proc_d.h:
+../../../src/include/catalog/pg_publication_d.h:
+../../../src/include/catalog/pg_subscription_d.h:
+../../../src/include/catalog/pg_type_d.h:
+../../../src/include/common/hashfn.h:
+pg_backup_utils.h:
+../../../src/include/common/logging.h:
+pg_dump.h:
+pg_backup.h:
+../../../src/include/common/compression.h:
+../../../src/include/common/file_utils.h:
+../../../src/include/fe_utils/simple_list.h:
+../../../src/interfaces/libpq/libpq-fe.h:
+../../../src/include/postgres_ext.h:
+../../../src/include/lib/simplehash.h:
+../../../src/include/port/pg_bitutils.h:

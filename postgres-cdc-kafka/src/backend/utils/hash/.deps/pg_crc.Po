@@ -1,0 +1,31 @@
+pg_crc.o: pg_crc.c ../../../../src/include/postgres.h \
+ ../../../../src/include/c.h ../../../../src/include/pg_config.h \
+ ../../../../src/include/pg_config_manual.h \
+ ../../../../src/include/pg_config_os.h \
+ ../../../../src/include/postgres_ext.h ../../../../src/include/port.h \
+ ../../../../src/include/utils/elog.h \
+ ../../../../src/include/lib/stringinfo.h \
+ ../../../../src/include/utils/errcodes.h \
+ ../../../../src/include/utils/palloc.h \
+ ../../../../src/include/port/pg_crc32c.h \
+ ../../../../src/include/port/pg_bswap.h \
+ ../../../../src/include/utils/fmgrprotos.h \
+ ../../../../src/include/fmgr.h ../../../../src/include/utils/pg_crc.h \
+ ../../../../src/include/varatt.h
+../../../../src/include/postgres.h:
+../../../../src/include/c.h:
+../../../../src/include/pg_config.h:
+../../../../src/include/pg_config_manual.h:
+../../../../src/include/pg_config_os.h:
+../../../../src/include/postgres_ext.h:
+../../../../src/include/port.h:
+../../../../src/include/utils/elog.h:
+../../../../src/include/lib/stringinfo.h:
+../../../../src/include/utils/errcodes.h:
+../../../../src/include/utils/palloc.h:
+../../../../src/include/port/pg_crc32c.h:
+../../../../src/include/port/pg_bswap.h:
+../../../../src/include/utils/fmgrprotos.h:
+../../../../src/include/fmgr.h:
+../../../../src/include/utils/pg_crc.h:
+../../../../src/include/varatt.h:

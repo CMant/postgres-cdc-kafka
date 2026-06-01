@@ -1,0 +1,36 @@
+load_manifest.o: load_manifest.c ../../../src/include/postgres_fe.h \
+ ../../../src/include/c.h ../../../src/include/pg_config.h \
+ ../../../src/include/pg_config_manual.h \
+ ../../../src/include/pg_config_os.h ../../../src/include/postgres_ext.h \
+ ../../../src/include/port.h ../../../src/include/common/fe_memutils.h \
+ ../../../src/include/common/hashfn_unstable.h \
+ ../../../src/include/common/logging.h \
+ ../../../src/include/common/parse_manifest.h \
+ ../../../src/include/access/xlogdefs.h \
+ ../../../src/include/common/checksum_helper.h \
+ ../../../src/include/common/cryptohash.h \
+ ../../../src/include/common/sha2.h ../../../src/include/port/pg_crc32c.h \
+ ../../../src/include/port/pg_bswap.h ../../../src/include/mb/pg_wchar.h \
+ load_manifest.h ../../../src/include/lib/simplehash.h \
+ ../../../src/include/port/pg_bitutils.h
+../../../src/include/postgres_fe.h:
+../../../src/include/c.h:
+../../../src/include/pg_config.h:
+../../../src/include/pg_config_manual.h:
+../../../src/include/pg_config_os.h:
+../../../src/include/postgres_ext.h:
+../../../src/include/port.h:
+../../../src/include/common/fe_memutils.h:
+../../../src/include/common/hashfn_unstable.h:
+../../../src/include/common/logging.h:
+../../../src/include/common/parse_manifest.h:
+../../../src/include/access/xlogdefs.h:
+../../../src/include/common/checksum_helper.h:
+../../../src/include/common/cryptohash.h:
+../../../src/include/common/sha2.h:
+../../../src/include/port/pg_crc32c.h:
+../../../src/include/port/pg_bswap.h:
+../../../src/include/mb/pg_wchar.h:
+load_manifest.h:
+../../../src/include/lib/simplehash.h:
+../../../src/include/port/pg_bitutils.h:

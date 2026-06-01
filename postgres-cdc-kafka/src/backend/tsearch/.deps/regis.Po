@@ -1,0 +1,26 @@
+regis.o: regis.c ../../../src/include/postgres.h ../../../src/include/c.h \
+ ../../../src/include/pg_config.h ../../../src/include/pg_config_manual.h \
+ ../../../src/include/pg_config_os.h ../../../src/include/postgres_ext.h \
+ ../../../src/include/port.h ../../../src/include/utils/elog.h \
+ ../../../src/include/lib/stringinfo.h \
+ ../../../src/include/utils/errcodes.h \
+ ../../../src/include/utils/palloc.h \
+ ../../../src/include/tsearch/dicts/regis.h \
+ ../../../src/include/tsearch/ts_locale.h \
+ ../../../src/include/mb/pg_wchar.h \
+ ../../../src/include/utils/pg_locale.h
+../../../src/include/postgres.h:
+../../../src/include/c.h:
+../../../src/include/pg_config.h:
+../../../src/include/pg_config_manual.h:
+../../../src/include/pg_config_os.h:
+../../../src/include/postgres_ext.h:
+../../../src/include/port.h:
+../../../src/include/utils/elog.h:
+../../../src/include/lib/stringinfo.h:
+../../../src/include/utils/errcodes.h:
+../../../src/include/utils/palloc.h:
+../../../src/include/tsearch/dicts/regis.h:
+../../../src/include/tsearch/ts_locale.h:
+../../../src/include/mb/pg_wchar.h:
+../../../src/include/utils/pg_locale.h:

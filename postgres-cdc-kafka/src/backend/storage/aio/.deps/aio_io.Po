@@ -1,0 +1,61 @@
+aio_io.o: aio_io.c ../../../../src/include/postgres.h \
+ ../../../../src/include/c.h ../../../../src/include/pg_config.h \
+ ../../../../src/include/pg_config_manual.h \
+ ../../../../src/include/pg_config_os.h \
+ ../../../../src/include/postgres_ext.h ../../../../src/include/port.h \
+ ../../../../src/include/utils/elog.h \
+ ../../../../src/include/lib/stringinfo.h \
+ ../../../../src/include/utils/errcodes.h \
+ ../../../../src/include/utils/palloc.h \
+ ../../../../src/include/miscadmin.h \
+ ../../../../src/include/datatype/timestamp.h \
+ ../../../../src/include/pgtime.h ../../../../src/include/storage/aio.h \
+ ../../../../src/include/storage/aio_types.h \
+ ../../../../src/include/storage/block.h \
+ ../../../../src/include/storage/relfilelocator.h \
+ ../../../../src/include/common/relpath.h \
+ ../../../../src/include/catalog/catversion.h \
+ ../../../../src/include/storage/procnumber.h \
+ ../../../../src/include/storage/aio_internal.h \
+ ../../../../src/include/lib/ilist.h \
+ ../../../../src/include/port/pg_iovec.h \
+ ../../../../src/include/storage/condition_variable.h \
+ ../../../../src/include/storage/proclist_types.h \
+ ../../../../src/include/storage/spin.h \
+ ../../../../src/include/storage/s_lock.h \
+ ../../../../src/include/storage/fd.h \
+ ../../../../src/include/utils/wait_event.h \
+ ../../../../src/include/utils/wait_event_types.h \
+ ../../../../src/include/utils/wait_classes.h
+../../../../src/include/postgres.h:
+../../../../src/include/c.h:
+../../../../src/include/pg_config.h:
+../../../../src/include/pg_config_manual.h:
+../../../../src/include/pg_config_os.h:
+../../../../src/include/postgres_ext.h:
+../../../../src/include/port.h:
+../../../../src/include/utils/elog.h:
+../../../../src/include/lib/stringinfo.h:
+../../../../src/include/utils/errcodes.h:
+../../../../src/include/utils/palloc.h:
+../../../../src/include/miscadmin.h:
+../../../../src/include/datatype/timestamp.h:
+../../../../src/include/pgtime.h:
+../../../../src/include/storage/aio.h:
+../../../../src/include/storage/aio_types.h:
+../../../../src/include/storage/block.h:
+../../../../src/include/storage/relfilelocator.h:
+../../../../src/include/common/relpath.h:
+../../../../src/include/catalog/catversion.h:
+../../../../src/include/storage/procnumber.h:
+../../../../src/include/storage/aio_internal.h:
+../../../../src/include/lib/ilist.h:
+../../../../src/include/port/pg_iovec.h:
+../../../../src/include/storage/condition_variable.h:
+../../../../src/include/storage/proclist_types.h:
+../../../../src/include/storage/spin.h:
+../../../../src/include/storage/s_lock.h:
+../../../../src/include/storage/fd.h:
+../../../../src/include/utils/wait_event.h:
+../../../../src/include/utils/wait_event_types.h:
+../../../../src/include/utils/wait_classes.h:

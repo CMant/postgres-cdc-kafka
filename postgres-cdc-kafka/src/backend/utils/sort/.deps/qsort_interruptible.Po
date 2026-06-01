@@ -1,0 +1,29 @@
+qsort_interruptible.o: qsort_interruptible.c \
+ ../../../../src/include/postgres.h ../../../../src/include/c.h \
+ ../../../../src/include/pg_config.h \
+ ../../../../src/include/pg_config_manual.h \
+ ../../../../src/include/pg_config_os.h \
+ ../../../../src/include/postgres_ext.h ../../../../src/include/port.h \
+ ../../../../src/include/utils/elog.h \
+ ../../../../src/include/lib/stringinfo.h \
+ ../../../../src/include/utils/errcodes.h \
+ ../../../../src/include/utils/palloc.h \
+ ../../../../src/include/miscadmin.h \
+ ../../../../src/include/datatype/timestamp.h \
+ ../../../../src/include/pgtime.h \
+ ../../../../src/include/lib/sort_template.h
+../../../../src/include/postgres.h:
+../../../../src/include/c.h:
+../../../../src/include/pg_config.h:
+../../../../src/include/pg_config_manual.h:
+../../../../src/include/pg_config_os.h:
+../../../../src/include/postgres_ext.h:
+../../../../src/include/port.h:
+../../../../src/include/utils/elog.h:
+../../../../src/include/lib/stringinfo.h:
+../../../../src/include/utils/errcodes.h:
+../../../../src/include/utils/palloc.h:
+../../../../src/include/miscadmin.h:
+../../../../src/include/datatype/timestamp.h:
+../../../../src/include/pgtime.h:
+../../../../src/include/lib/sort_template.h:

@@ -1,0 +1,21 @@
+exprscan.o: exprscan.c ../../../src/include/postgres_fe.h \
+ ../../../src/include/c.h ../../../src/include/pg_config.h \
+ ../../../src/include/pg_config_manual.h \
+ ../../../src/include/pg_config_os.h ../../../src/include/postgres_ext.h \
+ ../../../src/include/port.h ../../../src/include/common/fe_memutils.h \
+ ../../../src/include/fe_utils/psqlscan_int.h \
+ ../../../src/include/fe_utils/psqlscan.h \
+ ../../../src/interfaces/libpq/pqexpbuffer.h pgbench.h exprparse.h
+../../../src/include/postgres_fe.h:
+../../../src/include/c.h:
+../../../src/include/pg_config.h:
+../../../src/include/pg_config_manual.h:
+../../../src/include/pg_config_os.h:
+../../../src/include/postgres_ext.h:
+../../../src/include/port.h:
+../../../src/include/common/fe_memutils.h:
+../../../src/include/fe_utils/psqlscan_int.h:
+../../../src/include/fe_utils/psqlscan.h:
+../../../src/interfaces/libpq/pqexpbuffer.h:
+pgbench.h:
+exprparse.h:

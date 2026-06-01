@@ -1,0 +1,34 @@
+method_io_uring.o: method_io_uring.c ../../../../src/include/postgres.h \
+ ../../../../src/include/c.h ../../../../src/include/pg_config.h \
+ ../../../../src/include/pg_config_manual.h \
+ ../../../../src/include/pg_config_os.h \
+ ../../../../src/include/postgres_ext.h ../../../../src/include/port.h \
+ ../../../../src/include/utils/elog.h \
+ ../../../../src/include/lib/stringinfo.h \
+ ../../../../src/include/utils/errcodes.h \
+ ../../../../src/include/utils/palloc.h \
+ ../../../../src/include/storage/aio.h \
+ ../../../../src/include/storage/aio_types.h \
+ ../../../../src/include/storage/block.h \
+ ../../../../src/include/storage/relfilelocator.h \
+ ../../../../src/include/common/relpath.h \
+ ../../../../src/include/catalog/catversion.h \
+ ../../../../src/include/storage/procnumber.h
+../../../../src/include/postgres.h:
+../../../../src/include/c.h:
+../../../../src/include/pg_config.h:
+../../../../src/include/pg_config_manual.h:
+../../../../src/include/pg_config_os.h:
+../../../../src/include/postgres_ext.h:
+../../../../src/include/port.h:
+../../../../src/include/utils/elog.h:
+../../../../src/include/lib/stringinfo.h:
+../../../../src/include/utils/errcodes.h:
+../../../../src/include/utils/palloc.h:
+../../../../src/include/storage/aio.h:
+../../../../src/include/storage/aio_types.h:
+../../../../src/include/storage/block.h:
+../../../../src/include/storage/relfilelocator.h:
+../../../../src/include/common/relpath.h:
+../../../../src/include/catalog/catversion.h:
+../../../../src/include/storage/procnumber.h:
