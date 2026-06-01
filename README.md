@@ -80,7 +80,7 @@
 
 
 # 安装使用
- > 仅提供二进制版本，基于Rocky9.7编译。configure参数如下，支持大部分x86平台，开箱即用。 debain-bookworm 容器也可以。 
+ > 基于Rocky9.7编译。configure参数如下，支持大部分x86平台。 debain-bookworm 容器也可以。 
 
   ```bash
 CFLAGS="-O3 -march=x86-64 -mtune=generic -funroll-loops -fomit-frame-pointer" \
