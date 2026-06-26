@@ -10,8 +10,7 @@
 现有的 `PostgreSQL CDC` 解决方案，如 `Debezium` 和 `Flink CDC`，虽然功能强大，但在某些场景下存在一些痛点：
 
 *   **性能瓶颈**：核心代码使用 Java 编写，相较于 C 语言，运行效率存在提升空间。
-*   **解码效率**：通常依赖 `decoderbufs` 等非原生解码器。PostgreSQL 原生提供了 `pgoutput` 和 `test_decoding` 两种插件，虽然`test_decoding`使用很方便，但解码效率不如原生的`pgoutput`。
-*   **配置复杂**：部署和配置流程相对繁琐，学习成本较高。
+*   **配置复杂**：部署和配置流程相对繁琐，学习成本较高。使用`postgres-cdc-kafka`就像在使用另一套`postgresql`数据库。
 
 ---
 
@@ -25,6 +24,17 @@
 *   **极简配置**：配置方式与 PostgreSQL 原生的发布/订阅 (`PUBLISH/SUBSCRIBE`) 模型完全一致。唯一的区别在于，订阅端的表不存储实际数据（我屏蔽了数据 `apply` 日志的步骤），只需要表结构完成订阅过程，索引什么的统统都不需要建。
 *   **生态兼容**：流复制功能正常，现有的高可用（HA）解决方案。比如 `repmgr`、`Patroni` 依然可以用。当然，您也可以将其部署在 K8s 环境。由于节点间仅传输少量的 DDL和订阅命令，对网络和存储的压力极小。
 *   **管理完善**：虽然对`pg_recvlogical.c` 进行二次开发更方便，但是 1.无法避免使用低效解码插件；2.缺少完善的管理维护系统，3.对存量数据无法直接处理。`postgres-cdc-kafka`管理CDC任务就和管理PostgreSql的发布订阅一样。
+
+---
+## 使用`pgoutput`的缺陷  
+
+> 参考debezium的官网
+###  Additionally, the pgoutput logical decoding output plug-in does not capture values for generated columns, resulting in missing data for these columns in the connector’s output.
+###  decoderbufs passes a byte array (byte[]) representation of the column data. pgoutput passes a string representation of the column data.  
+> 也许是debezium的设计使用pgoutput会带来比decoderbufs更高的代价。但本人认为：投递到kafka中的数据终究是要全部转换成字符串的。`postgres-cdc-kafka` 在内核代码中获取logical日志的字面量后拼凑成json的格式，并未对pgoutput转换过程做任何修改。至少在协议紧凑性方面，在`postgresql`源码中的pgoutput比decoderbufs更有优势。
+> 此外，debezium或者flink的sink端可以选择多种形式，比如直插数据库，也许是这种原因得出decoderbufs效率更好的结论。在实际的施工中，CDC直接sink入库可能会因为各种原因出现中断或报错，而使用kafka作为一层缓冲，消费端可以选择必要的字段写入是一种比较稳妥的方式。
+> 对于下游消费端关于数据类型的转换代价。本人认为不需要考虑。decoderbufs内部包含数据类型，那么下游消费时，如果拼凑insert语句时需要针对不同的数据类型对value部分进行转换和调整就不需要代价吗？我认为，数据库中存放的数据是人可读的，也就是‘字符串’，所有的一切都是字符串。并且大部分数据库insert语句的value部分全部改成字符串完全不影响正常写入，转换交由数据库自己解决。消费端程序完全没有转换对应数据类型的必要，直接插入即可。
+> 如果需要数据类型，也可以添加。
 
 
 ---
