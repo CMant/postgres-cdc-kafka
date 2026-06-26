@@ -11,7 +11,7 @@
 
 *   **性能瓶颈**：核心代码使用 Java 编写，相较于 C 语言，运行效率存在提升空间。
 *   **配置复杂**：部署和配置流程相对繁琐，学习成本较高。使用`postgres-cdc-kafka`就像在使用另一套`postgresql`数据库。
-
+*   **专用软件**: 注意：`Debezium`or`Flink`是一个**通用**的CDC框架。而`postgres-cdc-kafka`是一个**专用**程序。
 ---
 
 ## ✨ 核心优势
@@ -26,15 +26,17 @@
 *   **管理完善**：虽然对`pg_recvlogical.c` 进行二次开发更方便，但是 1.无法避免使用低效解码插件；2.缺少完善的管理维护系统，3.对存量数据无法直接处理。`postgres-cdc-kafka`管理CDC任务就和管理PostgreSql的发布订阅一样。
 
 ---
-## 使用`pgoutput`的缺陷  
+## 关于使用`pgoutput`的缺陷的讨论  
 
 > 参考debezium的官网
-###  Additionally, the pgoutput logical decoding output plug-in does not capture values for generated columns, resulting in missing data for these columns in the connector’s output.
-###  decoderbufs passes a byte array (byte[]) representation of the column data. pgoutput passes a string representation of the column data.  
-> 也许是debezium的设计使用pgoutput会带来比decoderbufs更高的代价。但本人认为：投递到kafka中的数据终究是要全部转换成字符串的。`postgres-cdc-kafka` 在内核代码中获取logical日志的字面量后拼凑成json的格式，并未对pgoutput转换过程做任何修改。至少在协议紧凑性方面，在`postgresql`源码中的pgoutput比decoderbufs更有优势。
-> 此外，debezium或者flink的sink端可以选择多种形式，比如直插数据库，也许是这种原因得出decoderbufs效率更好的结论。在实际的施工中，CDC直接sink入库可能会因为各种原因出现中断或报错，而使用kafka作为一层缓冲，消费端可以选择必要的字段写入是一种比较稳妥的方式。
-> 对于下游消费端关于数据类型的转换代价。本人认为不需要考虑。decoderbufs内部包含数据类型，那么下游消费时，如果拼凑insert语句时需要针对不同的数据类型对value部分进行转换和调整就不需要代价吗？我认为，数据库中存放的数据是人可读的，也就是‘字符串’，所有的一切都是字符串。并且大部分数据库insert语句的value部分全部改成字符串完全不影响正常写入，转换交由数据库自己解决。消费端程序完全没有转换对应数据类型的必要，直接插入即可。
-> 如果需要数据类型，也可以添加。
+```bash
+  Additionally, the pgoutput logical decoding output plug-in does not capture values for generated columns, resulting in missing data for these columns in the connector’s output.
+  decoderbufs passes a byte array (byte[]) representation of the column data. pgoutput passes a string representation of the column data.  
+```
+*  也许是debezium的设计使用pgoutput会带来比decoderbufs更高的代价。但本人认为：投递到kafka中的数据终究是要全部转换成字符串的。`postgres-cdc-kafka` 在内核代码中获取logical日志的字面量后拼凑成json的格式，并未对pgoutput转换过程做任何修改。至少在协议紧凑性方面，在`postgresql`源码中的pgoutput比decoderbufs更有优势。
+*  此外，debezium或者flink作为一种通用的cdc框架，它们的sink端可以选择多种形式，比如直插数据库，另外，它们内部需要维护一套自己的数据类型来对不同的数据库的数据类型进行兼容。也许是这种原因得出decoderbufs效率更好的结论。而`postgres-cdc-kafka` 作为一个专用程序，不需要考虑通用框架下的各种兼容问题。 在实际的施工中，CDC直接sink入库可能会因为各种原因出现中断或报错，而使用kafka作为一层缓冲，消费端可以选择必要的字段写入是一种比较稳妥的方式。因此本人只选用了sink-kafka这一种方式。
+* 对于下游消费端关于数据类型的转换代价。本人认为不需要考虑。decoderbufs内部包含数据类型，那么下游消费时，如果拼凑insert语句时需要针对不同的数据类型对value部分进行转换和调整就不需要代价吗？我认为，数据库中存放的数据是人可读的，也就是‘字符串’，所有的一切都是字符串。并且大部分数据库insert语句的value部分全部改成字符串完全不影响正常写入，转换交由数据库自己解决。消费端程序完全没有转换对应数据类型的必要，直接插入即可。
+* 如果需要包含数据类型，其实也可以添加。
 
 
 ---
